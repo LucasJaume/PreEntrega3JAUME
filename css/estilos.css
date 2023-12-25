@@ -1,0 +1,23 @@
+/* Reset de estilos para el body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para el contenedor de productos */
+.productos {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+/* Estilos para los párrafos dentro del contenedor */
+.productos p {
+    margin: 10px 0;
+    font-size: 16px;
+}
