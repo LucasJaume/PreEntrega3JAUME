@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -35,4 +35,75 @@ main {
 #tabla-carrito img {
     max-width: 50px;
     max-height: 50px;
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: rgb(28, 166, 138);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: rgb(28, 166, 138);
+    color: #fff;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+/* Estilos para el botón eliminar */
+.boton-Eliminar {
+    cursor: pointer;
+    color: #fff;
+    background-color: #d9534f; /* Rojo */
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.boton-Eliminar:hover {
+    background-color: #c9302c; /* Rojo más oscuro al pasar el ratón */
+}
+
+.acciones {
+    text-align: center;
+    padding-top: 20px; /* Espaciado opcional entre la tabla y los botones */
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(182, 160, 18);
+    border-radius: 5px;
 }

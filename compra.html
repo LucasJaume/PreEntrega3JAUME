@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/compra.css">
-    <script defer src="js/compra.js"></script>
     <title>Compra</title>
+    <script defer src="js/compra.js"></script>
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
     </header>
 
     <main>
-        <table id="tabla-carrito">
+        <table>
             <thead>
                 <tr>
                     <th>Imagen</th>
@@ -23,12 +23,23 @@
                     <th>Precio</th>
                 </tr>
             </thead>
-            <tbody id="tabla-body">
-                
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td data-eliminar="" class="boton-Eliminar"></td>
+                </tr>
             </tbody>
+            <tfoot>
+                <td colspan="2">Total</td>
+                <td id="total-precio">$</td>
+            </tfoot>
         </table>
     </main>
-
-    <script src="js/compra.js" defer></script>
+    <div class="acciones">
+        <button onclick="window.location.href='index.html'">Volver</button>
+        <button id="boton-comprar">Comprar</button>
+    </div>
 </body>
 </html>
