@@ -83,16 +83,8 @@ function consultarBicicleta() {
     */
 
 //PRE-ENTREGA 2
-const carrito=[]
-const productos=[{id:1, imagen:'🚲', nombre:"BICICLETA ZION", precio:750000},
-{id:2, imagen:'🚲', nombre:"BICICLETA SLP", precio:350000},
-{id:3, imagen:'🚲', nombre:"BICICLETA NORDIC", precio:250000},
-{id:4, imagen:'🚲', nombre:"BICICLETA TOPMEGA", precio:560000},
-{id:5, imagen:'🧴', nombre:"CARAMAÑOLA", precio:35000},
-{id:6, imagen:'🪑', nombre:"ASIENTO DE BICICLETA", precio:125000},
-{id:7, imagen:'⛑', nombre:"CASCO", precio:110000}]
 
-function buscarProducto(productoABuscar) {
+/*function buscarProducto(productoABuscar) {
     if(productoABuscar!="") {
         let encontrado=productos.find((producto)=>producto.nombre===productoABuscar.toUpperCase())
         if (encontrado!==undefined) {
@@ -119,9 +111,91 @@ function comprar() {
                 console.log("El total de su compra es: $",compraFinal.obtenerSubtotal())
             }
         }
+}*/
+
+//PRE ENTREGA 3
+const carrito=[]
+const productos=[{id:1, imagen:'🚲', nombre:"BICICLETA ZION", precio:750000},
+{id:2, imagen:'🚲', nombre:"BICICLETA SLP", precio:350000},
+{id:3, imagen:'🚲', nombre:"BICICLETA NORDIC", precio:250000},
+{id:4, imagen:'🚲', nombre:"BICICLETA TOPMEGA", precio:560000},
+{id:5, imagen:'🧴', nombre:"CARAMAÑOLA", precio:35000},
+{id:6, imagen:'🪑', nombre:"ASIENTO DE BICICLETA", precio:125000},
+{id:7, imagen:'⛑', nombre:"CASCO", precio:110000}]
+
+const contenedor=document.getElementById("contenedor")
+const botonCarrito=document.querySelector("img#carrito")
+const notificacion=document.querySelector("div#notificacion")
+
+function retornarCardHtml(producto) {
+    return `<div class="card"> 
+                <div><h1>${producto.imagen}</h1></div>
+                <div class="card-title"><p>${producto.nombre}</p></div>
+                <div class="card-price"><p>$ ${producto.precio}</p></div>
+                <button id="${producto.id}" class="button button-outline button-add" title="Pulsa para comprar">COMPRAR</button>
+            </div>`
 }
 
+function retornarCardError(){
+    return `<div class="card-error">
+                <h2>🔌</h2>
+                <h3>No se han podido listar los productos</h3>
+                <h4>Intenta nuevamente en unos instantes...</h4>
+            </div>`
+}
 
+function cargarProductos(array){
+if(array.length>0){
+    array.forEach((producto) => {
+        contenedor.innerHTML+=retornarCardHtml(producto)
+    })
+}else{
+    contenedor.innerHTML=retornarCardError()
+}
+}
+
+cargarProductos(productos) //cargo las cards con los productos disponibles en el array
+
+function activarBotonComprar(){
+    const btnComprar=document.querySelectorAll("button.button-add")
+    for (let boton of btnComprar){
+        boton.addEventListener("click", ()=>{
+            const productoSeleccionado = productos.find((producto)=> producto.id === parseInt(boton.id))
+            carrito.push(productoSeleccionado)
+            localStorage.setItem("miCarrito", JSON.stringify(carrito))
+            // console.table(carrito)
+        })
+    }
+}
+activarBotonComprar()
+
+botonCarrito.addEventListener("mousemove", ()=>{
+    if (carrito.length>0) {
+        botonCarrito.title= "Hay "+carrito.length+" productos en el carrito!"
+    }else{
+        
+    }
+})
+
+botonCarrito.addEventListener("click", () => {
+    if (carrito.length > 0) {
+        location.href = "compra.html";
+    } else {
+        notificacion.innerHTML = mostrarAlerta();
+        notificacion.style.right = "10px"; // Ajusta la posición a la derecha de la pantalla
+        notificacion.style.display = "block";
+
+        setTimeout(() => {
+            notificacion.style.display = "none";
+        }, 3000);
+    }
+})
+
+function mostrarAlerta() {
+    return  `<div class="alert alert-warning" role="alert">
+                No hay productos en el carrito!
+            </div>`
+}
 
 
 

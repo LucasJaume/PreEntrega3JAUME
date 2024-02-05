@@ -1,23 +1,62 @@
-/* Reset de estilos para el body */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+.container {
+    max-width: 800px;
+    margin: 0 auto; /*Para centrar el contenedor */
 }
 
-/* Estilos para el contenedor de productos */
-.productos {
-    width: 80%;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f8f8f8;
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para los párrafos dentro del contenedor */
-.productos p {
+.card h1 {
+    font-size: 24px;
+}
+
+.card-title p {
+    font-size: 18px;
+    font-weight: bold;
     margin: 10px 0;
+}
+
+.card-price p {
     font-size: 16px;
+    color: #007bff; 
+}
+
+.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.button-outline {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+}
+
+.button:hover {
+    background-color: #0056b3; 
+    border: 1px solid #0056b3;
+}
+
+.button-outline:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#notificacion {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    display: none;
 }
