@@ -56,7 +56,7 @@ function activarBotonComprar() {
                 productoEnCarrito.cantidad++;
             } else {
                 // Si el producto no está en el carrito, agregarlo
-                productoSeleccionado.cantidad = 1; // Establecer la cantidad inicial
+                productoSeleccionado.cantidad = 1; // Establece la cantidad inicial
                 carrito.push(productoSeleccionado);
             }
 

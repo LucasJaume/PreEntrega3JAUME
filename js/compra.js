@@ -21,7 +21,7 @@ function mostrarCarrito() {
 
     carritoNuevo.forEach((producto) => {
         tablebody.innerHTML += crearFilaHtml(producto);
-        totalPrecio += producto.precio;
+        totalPrecio= totalPrecio+(producto.precio*producto.cantidad);
     });
 
     // Mostrar el total en el pie de la tabla
