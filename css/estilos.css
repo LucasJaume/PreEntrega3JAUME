@@ -3,6 +3,24 @@
     margin: 0 auto; /*Para centrar el contenedor */
 }
 
+img{
+    max-width: 500px;
+    max-height: 500px;
+}
+
+#botonCuadrado {
+    position: fixed;
+    bottom: 20px; 
+    right: 50px; 
+    width: 150px; 
+    height: 50px; 
+    background-color: green; 
+    color: rgb(255, 255, 255); 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 h1{
         margin: 0 auto;
         display: block;

@@ -43,6 +43,11 @@ main {
     box-sizing: border-box;
 }
 
+img{
+    max-width: 400px;
+    max-height: 300px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -106,4 +111,5 @@ button {
     font-size: 16px;
     background-color: rgb(182, 160, 18);
     border-radius: 5px;
+    margin-bottom: 20px;
 }

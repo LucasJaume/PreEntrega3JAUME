@@ -1,0 +1,45 @@
+[
+    {
+      "id":1,
+      "imagen":"../img/biciletaZionStrix.jpeg",
+      "nombre":"BICICLETA ZION",
+      "precio":750000
+    },
+    {
+      "id":2,
+      "imagen":"../img/biciletaSlpPro.jpg",
+      "nombre":"BICICLETA SLP",
+      "precio":350000
+    },
+    {
+      "id":3,
+      "imagen":"../img/nordicc.jpg",
+      "nombre":"BICICLETA NORDIC",
+      "precio":250000
+    },
+    {
+      "id":4,
+      "imagen":"../img/TOP_MEGA_SUNSHINE.png",
+      "nombre":"BICICLETA TOPMEGA",
+      "cantidad":0,
+      "precio":560000
+    },
+    {
+      "id":5,
+      "imagen":"../img/caramanolaa.jpg",
+      "nombre":"CARAMAÑOLA",
+      "precio":35000
+    },
+    {
+      "id":6,
+      "imagen":"../img/asiento.jpg",
+      "nombre":"ASIENTO DE BICICLETA",
+      "precio":125000
+    },
+    {
+      "id":7,
+      "imagen":"../img/casco.jpg",
+      "nombre":"CASCO",
+      "precio":110000
+    }
+  ]

@@ -6,12 +6,12 @@ function recuperarCarrito() {
 }
 const carritoNuevo=recuperarCarrito() 
 
-function armarFilaHtml(producto){
+function crearFilaHtml(producto){
     return`<tr>
-                <td>${producto.imagen}</td>
+                <td><img src="${producto.imagen}"></td>
                 <td>${producto.nombre}</td>
                 <td>$ ${producto.precio}</td>
-                <td data-eliminar="" class="boton-Eliminar">x</td>
+                <td>${producto.cantidad}</td>
             </tr>`
 }
 
@@ -20,7 +20,7 @@ function mostrarCarrito() {
     let totalPrecio = 0;
 
     carritoNuevo.forEach((producto) => {
-        tablebody.innerHTML += armarFilaHtml(producto);
+        tablebody.innerHTML += crearFilaHtml(producto);
         totalPrecio += producto.precio;
     });
 
@@ -29,20 +29,24 @@ function mostrarCarrito() {
 }
 
 mostrarCarrito();
-const btnComprar = document.querySelector("button#boton-comprar");
 
+
+
+const btnComprar = document.querySelector("button#boton-comprar");
 btnComprar.addEventListener("click", () => {
     if (carritoNuevo.length > 0) {
         Swal.fire({
             icon: "success",
-            title: "La compra fue realizada con éxito!",
+            title: "La compra fue realizada con éxito, Se enviara un mail para seguir con la compra!",
             showConfirmButton: false,
-            timer: 1500
+            timer: 2200
         });
 
         // Redireccionar a index.html después del tiempo de espera
         setTimeout(() => {
             window.location.href = "index.html";
-        }, 1500);
+        }, 2200);
     }
 })
+
+
