@@ -3,6 +3,11 @@
     margin: 0 auto; /*Para centrar el contenedor */
 }
 
+h1{
+        margin: 0 auto;
+        display: block;
+    }
+
 .card {
     border: 1px solid #ddd;
     border-radius: 8px;

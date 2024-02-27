@@ -29,3 +29,20 @@ function mostrarCarrito() {
 }
 
 mostrarCarrito();
+const btnComprar = document.querySelector("button#boton-comprar");
+
+btnComprar.addEventListener("click", () => {
+    if (carritoNuevo.length > 0) {
+        Swal.fire({
+            icon: "success",
+            title: "La compra fue realizada con éxito!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        // Redireccionar a index.html después del tiempo de espera
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1500);
+    }
+})
